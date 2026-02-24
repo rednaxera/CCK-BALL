@@ -21,7 +21,7 @@
 &mmv {
     time-to-max-speed-ms = <500>;
     acceleration-exponent = <1>;
-    trigger-period-ms = <16>;
+    trigger-period-ms = <10>;
 };
 
 &soft_off { hold-time-ms = <2000>; };
@@ -70,7 +70,7 @@
 &trans   &trans  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans   &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp UP_ARROW DOWN_ARROW &scroll_vertical_encoder>;
         };
 
         BT_layers {
