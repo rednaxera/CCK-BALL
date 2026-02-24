@@ -31,8 +31,8 @@
     scroll_vertical_encoder: scroll_vertical_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-        tap-ms = <60>;
+        bindings = <&msc SCRL_DOWN>, <&msc SCRL_U>;
+        tap-ms = <30>;
     };
 
     // 左右滚动编码器行为
