@@ -31,8 +31,8 @@
     scroll_vertical_encoder: scroll_vertical_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-        tap-ms = <30>;
+        bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+        tap-ms = <40>;
     };
 
     // 左右滚动编码器行为
@@ -42,7 +42,15 @@
         bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
         tap-ms = <60>;
     };
-    
+
+    // セレクト上下（↑/↓）用エンコーダ
+    select_updown_encoder: select_updown_encoder {
+        compatible = "zmk,behavior-sensor-rotate";
+        #sensor-binding-cells = <0>;
+        bindings = <&kp DOWN_ARROW>, <&kp UP_ARROW>;
+        tap-ms = <40>;
+    };
+
     behaviors {
     };
 
@@ -58,7 +66,7 @@
 &kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT  &kp DELETE  &kp SPACE  &mo 1   &mo 2   &kp SPACE  &kp ENTER  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&select_updown_encoder>, <&scroll_vertical_encoder>;
         };
 
         F_layers {
@@ -70,7 +78,7 @@
 &trans   &trans  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans   &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp UP_ARROW DOWN_ARROW &scroll_vertical_encoder>;
+            sensor-bindings = <&select_updown_encoder>, <&scroll_vertical_encoder>;
         };
 
         BT_layers {
@@ -82,7 +90,7 @@
 &trans  &trans          &trans        &trans        &trans        &trans        &trans      &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&select_updown_encoder>, <&scroll_vertical_encoder>;
         };
 
         scroll-layers {
@@ -94,7 +102,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&select_updown_encoder>, <&scroll_vertical_encoder>;
         };
 
         snipe-layers {
@@ -106,8 +114,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&scroll_vertical_encoder>,   // 编码器1：上下滚动
-                             <&scroll_horizontal_encoder>;  // 编码器2：左右滚动
+            sensor-bindings = <&select_updown_encoder>, <&scroll_vertical_encoder>;
         };
     };
 };
