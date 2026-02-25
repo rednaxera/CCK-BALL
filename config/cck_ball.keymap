@@ -79,11 +79,11 @@
 
         F_layers {
             bindings = <
-&trans  &kp F1           &kp F2           &kp F3           &kp F4         &kp F5     &kp F6            &kp F7  &kp F8  &kp F9  &kp F10  &trans
-&trans  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp DOT        &kp ASTRK  &none             &none   &none   &trans  &trans   &kp NON_US_BSLH
-&trans  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp COLON      &kp PLUS   &trans            &trans  &trans  &trans  &trans   &kp TILDE
-&trans  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_DIVIDE  &kp UNDER  &kp RS(NUMBER_1)  &none   &trans  &trans  &none    &kp SINGLE_QUOTE
-&trans  &kp KP_N0        &trans           &trans           &to 0          &to 3      &trans            &trans  &trans  &trans  &trans   &trans
+&trans  &kp F1           &kp F2           &kp F3           &kp F4         &kp F5     &kp F6           &kp F7       &kp F8                 &kp F9            &kp F10            &trans
+&trans  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp DOT        &kp ASTRK  &kp AMPERSAND    &kp LPAR     &kp RIGHT_PARENTHESIS  &kp F11           &kp F12            &kp NON_US_BSLH
+&trans  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp COLON      &kp PLUS   &kp DOLLAR       &kp PERCENT  &kp CARET              &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp TILDE
+&trans  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_DIVIDE  &kp UNDER  &kp EXCLAMATION  &kp AT_SIGN  &kp HASH               &kp PRINTSCREEN   &trans             &kp SINGLE_QUOTE
+&trans  &kp KP_N0        &trans           &trans           &to 0          &to 3      &trans           &trans       &trans                 &trans            &trans             &trans
             >;
 
             sensor-bindings =
