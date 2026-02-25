@@ -28,26 +28,32 @@
 
 / {
     // 上下滚动编码器行为
+
     scroll_vertical_encoder: scroll_vertical_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+
         tap-ms = <75>;
     };
 
     // 左右滚动编码器行为
+
     scroll_horizontal_encoder: scroll_horizontal_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
+
         tap-ms = <60>;
     };
 
     // セレクト上下（↑/↓）用エンコーダ
+
     select_updown_encoder: select_updown_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&kp DOWN_ARROW>, <&kp UP_ARROW>;
+
         tap-ms = <75>;
     };
 
@@ -59,14 +65,16 @@
 
         QWERTY {
             bindings = <
-&kp ESC           &kp N1        &kp N2        &kp N3      &kp N4     &kp N5  &kp N6  &kp N7     &kp N8     &kp N9          &kp N0          &kp BACKSPACE
-&kp TAB           &kp Q         &kp W         &kp E       &kp R      &kp T   &kp Y   &kp U      &kp I      &kp O           &kp P           &kp BSLH
-&kp CAPSLOCK      &kp A         &lt 4 S       &kp D       &lt 3 F    &kp G   &kp H   &kp J      &kp K      &kp L           &kp SEMI        &kp SQT
+&kp LA(GRAVE)     &kp N1        &kp N2        &kp N3      &kp N4     &kp N5  &kp N6  &kp N7     &kp N8     &kp N9          &kp N0          &kp BACKSPACE
+&kp ESC           &kp Q         &kp W         &kp E       &kp R      &kp T   &kp Y   &kp U      &kp I      &kp O           &kp P           &kp BSLH
+&kp TAB           &kp A         &lt 4 S       &kp D       &lt 3 F    &kp G   &kp H   &kp J      &kp K      &kp L           &kp SEMI        &kp SQT
 &kp LEFT_SHIFT    &kp Z         &kp X         &kp C       &kp V      &kp B   &kp N   &kp M      &kp COMMA  &kp DOT         &kp UP_ARROW    &kp FSLH
 &kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT  &kp DELETE  &kp SPACE  &mo 1   &mo 2   &kp SPACE  &kp ENTER  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
             >;
 
-            sensor-bindings = <&select_updown_encoder>, <&scroll_vertical_encoder>;
+            sensor-bindings =
+                <&select_updown_encoder>,
+                <&scroll_vertical_encoder>;
         };
 
         F_layers {
@@ -78,7 +86,9 @@
 &trans   &trans  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans   &trans
             >;
 
-            sensor-bindings = <&select_updown_encoder>, <&scroll_vertical_encoder>;
+            sensor-bindings =
+                <&select_updown_encoder>,
+                <&scroll_vertical_encoder>;
         };
 
         BT_layers {
@@ -90,7 +100,9 @@
 &trans  &trans          &trans        &trans        &trans        &trans        &trans      &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&select_updown_encoder>, <&scroll_vertical_encoder>;
+            sensor-bindings =
+                <&select_updown_encoder>,
+                <&scroll_vertical_encoder>;
         };
 
         scroll-layers {
@@ -102,7 +114,9 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&select_updown_encoder>, <&scroll_vertical_encoder>;
+            sensor-bindings =
+                <&select_updown_encoder>,
+                <&scroll_vertical_encoder>;
         };
 
         snipe-layers {
@@ -114,7 +128,9 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&select_updown_encoder>, <&scroll_vertical_encoder>;
+            sensor-bindings =
+                <&select_updown_encoder>,
+                <&scroll_vertical_encoder>;
         };
     };
 };
