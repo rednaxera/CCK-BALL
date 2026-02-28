@@ -80,8 +80,8 @@
             >;
 
             sensor-bindings =
-                <&select_updown_encoder>,
-                <&scroll_horizontal_encoder>;
+                <&scroll_horizontal_encoder>,
+                <&select_updown_encoder>;
         };
 
         F_layers {
