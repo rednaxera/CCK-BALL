@@ -60,11 +60,11 @@
         bindings = <&kp LANG1>, <&kp LANGUAGE_2>;
     };
 
-    UpDownScrl: UpDownScrl {
+    VerticalScrl: VerticalScrl {
         compatible = "zmk,behavior-sensor-rotate";
-        label = "UPDOWNSCRL";
+        label = "VERTICALSCRL";
         #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+        bindings = <&msc MOVE_Y(5)>, <&msc MOVE_Y(-5)>;
 
         tap-ms = <80>;
     };
@@ -73,7 +73,7 @@
         compatible = "zmk,behavior-sensor-rotate";
         label = "HORISONTALSCRL";
         #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
+        bindings = <&msc MOVE_X(5)>, <&msc MOVE_X(-5)>;
 
         tap-ms = <80>;
     };
@@ -93,7 +93,7 @@
 &kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT  &kp SPACE  &TD1    &TD2    &mkp LCLK  &mkp RCLK  &kp ENTER  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
             >;
 
-            sensor-bindings = <&select_updown_encoder>, <&UpDownScrl>;
+            sensor-bindings = <&select_updown_encoder>, <&VerticalScrl>;
         };
 
         F_layers {
@@ -105,7 +105,7 @@
 &trans  &kp KP_N0        &trans           &trans           &trans         &trans     &trans           &trans       &trans                 &trans            &trans             &trans
             >;
 
-            sensor-bindings = <&select_updown_encoder>, <&UpDownScrl>;
+            sensor-bindings = <&select_updown_encoder>, <&VerticalScrl>;
         };
 
         BT_layers {
@@ -117,7 +117,7 @@
 &trans  &trans          &trans        &trans        &trans        &trans        &trans      &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&select_updown_encoder>, <&UpDownScrl>;
+            sensor-bindings = <&select_updown_encoder>, <&VerticalScrl>;
         };
 
         scroll-layers {
